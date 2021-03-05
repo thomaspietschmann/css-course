@@ -1,3 +1,19 @@
+/* 
+0 - 600px: phone -- max width query
+600 - 900px: tablet portrait mode-- max width query
+900-1200px: tablet landscape mode-- max width query
+1200 - 1800px: normal styles
+1800+: big desktop -- min width query
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px;
+600px / 16px = 37.5em
+*/
 *,
 *::after,
 *::before {
@@ -7,6 +23,15 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
