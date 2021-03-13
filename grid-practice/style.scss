@@ -43,7 +43,7 @@
 }
 
 */
-
+/*
 // Method 2 with names lines
 
 .container {
@@ -66,17 +66,73 @@
   &--header {
     grid-column: col-start 1 / grid-end;
   }
-
+  
   &--sidebar {
     grid-column: col-end 3 / grid-end;
     grid-row: header-end / main-end;
   }
-
+  
   &--main {
     grid-row: main-start / main-end;
     grid-column: col-start 1 / col-end 3;
   }
   &--footer {
     grid-column: col-start 1 / grid-end;
+  }
+  
+}
+
+
+*/
+
+//METHOD 3: naming grid areas
+
+.container {
+  // height: 300px;
+  width: 1000px;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-rows: 100px 200px 400px 100px;
+  grid-template-columns: repeat(3, 1fr) 200px;
+
+  grid-template-areas:
+    ". head head head"
+    "box-1 box-2 box-3 side"
+    "main main main side"
+    "foot foot foot foot";
+
+  & > * {
+    background-color: red;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 400;
+  }
+}
+
+.item {
+  &--header {
+    grid-area: head;
+  }
+
+  &--1 {
+    grid-area: box-1;
+  }
+  &--2 {
+    grid-area: box-2;
+  }
+  &--3 {
+    grid-area: box-3;
+  }
+
+  &--sidebar {
+    grid-area: side;
+  }
+
+  &--main {
+    grid-area: main;
+  }
+
+  &--footer {
+    grid-area: foot;
   }
 }
